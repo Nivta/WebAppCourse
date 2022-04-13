@@ -5,7 +5,7 @@ const postschema = mongoose.Schema({
         type: String,
         require: true
     },
-    seder:{
+    sender:{
         type: String,
         require: true
     }

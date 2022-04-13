@@ -1,9 +1,18 @@
+const {request}=require('express')
 const Post = require('../models/post_model')
 
 const getAllPost = async (req, res) => {
     console.log('getAllPost')
     try {
-        const posts = await Post.find()
+        
+        const sender = req.query.sender
+        var posts
+        if(sender!=null| sender!=undefined){
+             posts = await Post.find({'sender' : sender})  
+        }
+        else{
+             posts = await Post.find()
+        }
         res.status(200).send(posts)
     } catch (err) {
         res.status(400).send({

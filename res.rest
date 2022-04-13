@@ -2,13 +2,14 @@
 
 GET http://localhost:3000/post
 ###
-
-GET http://localhost:3000/post/622f1f10de42bafece74c64a
+GET http://localhost:3000/post?sender=niv
+###
+GET http://localhost:3000/post/6231ac6a854a6719a304aebe
 ###
 POST http://localhost:3000/post
 Content-Type: application/json
 
 {
     "message" : "this is my first message",
-    "sender": "niv"
+    "sender" : "niv"
 }
